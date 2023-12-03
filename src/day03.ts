@@ -33,13 +33,9 @@ const gearRatio = (rowIndex: number, gearIndex: number): number => {
     ...(ROWS[rowIndex + 1] || "").matchAll(partPattern),
   ].filter((match) =>
     [
-      [
-        gearIndex < Number(match.index) + match[0].length,
-        gearIndex > Number(match.index),
-      ].every((i) => i === true),
-      Math.abs(gearIndex - Number(match.index)) < 2,
-      Math.abs(gearIndex - (Number(match.index) + match[0].length)) === 0,
-    ].some((i) => i === true)
+      gearIndex >= Number(match.index) - 1,
+      gearIndex <= Number(match.index) + match[0].length,
+    ].every((i) => i === true)
   );
 
   if (matches.length === 2) {
