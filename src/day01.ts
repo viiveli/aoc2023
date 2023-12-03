@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 
 let INPUT = readFileSync("./inputs/day01.in", "utf8");
-let TEST = readFileSync("./inputs/day012.test", "utf8");
+let TEST = readFileSync("./inputs/day01.test2", "utf8");
 
 const wordMap = [
   "zero",
