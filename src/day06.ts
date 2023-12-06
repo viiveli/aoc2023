@@ -4,7 +4,7 @@ const INPUT = readFileSync("./inputs/day06.in", "utf8").trim();
 const TEST = readFileSync("./inputs/day06.test", "utf8").trim();
 const a = 1;
 
-const checkRace = (race: { time: number; distance: number }): number => {
+const countWins = (race: { time: number; distance: number }): number => {
   let wins = 0;
 
   for (let t = 1; t < race.time; t++) {
@@ -29,7 +29,7 @@ const solver = (input: string): { [key: string]: any } => {
   });
 
   for (const race of races) {
-    part1 *= checkRace(race);
+    part1 *= countWins(race);
   }
 
   const mightyRace = {
@@ -37,7 +37,7 @@ const solver = (input: string): { [key: string]: any } => {
     distance: Number(races.map((r) => r.distance).join("")),
   };
 
-  let part2 = checkRace(mightyRace);
+  let part2 = countWins(mightyRace);
 
   return {
     part1: part1,
