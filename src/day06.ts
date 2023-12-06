@@ -9,7 +9,7 @@ const solver = (input: string): { [key: string]: any } => {
   const times = rows[0].split(/\s+/);
   const distances = rows[1].split(/\s+/);
   const a = 1;
-  let total = 1;
+  let part1 = 1;
 
   times.slice(1).map((v, i) => {
     races.push({
@@ -19,26 +19,26 @@ const solver = (input: string): { [key: string]: any } => {
   });
 
   for (const race of races) {
-    let c = 0;
+    let wins = 0;
 
     for (let t = 1; t < race.time; t++) {
-      if (t * a * (race.time - t) > race.distance) c++;
+      if (t * a * (race.time - t) > race.distance) wins++;
     }
 
-    total *= c;
+    part1 *= wins;
   }
 
   const totalTime = Number(races.map((r) => r.time).join(""));
   const totalDistance = Number(races.map((r) => r.distance).join(""));
-  let asd = 0;
+  let part2 = 0;
 
   for (let t = 1; t < totalTime; t++) {
-    if (t * a * (totalTime - t) > totalDistance) asd++;
+    if (t * a * (totalTime - t) > totalDistance) part2++;
   }
 
   return {
-    part1: total,
-    part2: asd,
+    part1: part1,
+    part2: part2,
   };
 };
 
