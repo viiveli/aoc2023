@@ -2,6 +2,15 @@
 ## https://adventofcode.com/2023/
 Second Advent of Code for me. Again with TypeScript
 
+> ### day 08
+> https://adventofcode.com/2023/day/8  
+> Part 2 missing
+> - **[./src/day08.ts](<./src/day08.ts> "day 08 solution")**  
+
+> ### day 07
+> https://adventofcode.com/2023/day/7  
+> - **pending**  
+
 > ### day 06
 > https://adventofcode.com/2023/day/6  
 > - **[./src/day06.ts](<./src/day06.ts> "day 06 solution")**  
